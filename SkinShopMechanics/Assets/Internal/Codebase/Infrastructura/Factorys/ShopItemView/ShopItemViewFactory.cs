@@ -13,19 +13,18 @@ using System;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
 using RimuruDev.Internal.Codebase.Utilities.Extensions;
 using UnityEngine;
 
-namespace RimuruDev.Internal.Codebase.Runtime.Factorys
+namespace RimuruDev.Internal.Codebase.Infrastructura.Factorys.ShopItemView
 {
     [CreateAssetMenu(menuName = "StaticData/Shop/Factory", fileName = nameof(ShopItemViewFactory), order = 0)]
     public sealed class ShopItemViewFactory : ScriptableObject
     {
-        [SerializeField] private ShopItemView characterSkinItemPrefab;
-        [SerializeField] private ShopItemView mazeSkinItemPrefab;
+        [SerializeField] private Runtime.SkinShop.Skins.View.ShopItemView characterSkinItemPrefab;
+        [SerializeField] private Runtime.SkinShop.Skins.View.ShopItemView mazeSkinItemPrefab;
 
-        public ShopItemView Create(ShopItem shopItem, Transform parent)
+        public Runtime.SkinShop.Skins.View.ShopItemView Create(ShopItem shopItem, Transform parent)
         {
             shopItem.CheckNull();
 

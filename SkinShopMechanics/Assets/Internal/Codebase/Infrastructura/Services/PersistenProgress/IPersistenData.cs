@@ -9,7 +9,9 @@
 //
 // **************************************************************** //
 
-namespace RimuruDev.Internal.Codebase.Runtime.Data
+using RimuruDev.Internal.Codebase.Infrastructura.Storages;
+
+namespace RimuruDev.Internal.Codebase.Infrastructura.Services.PersistenProgress
 {
     public interface IPersistenData
     {

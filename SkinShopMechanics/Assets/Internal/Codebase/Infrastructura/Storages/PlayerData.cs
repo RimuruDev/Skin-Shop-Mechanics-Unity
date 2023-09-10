@@ -15,7 +15,7 @@ using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
 using UnityEngine;
 
-namespace RimuruDev.Internal.Codebase.Runtime.Data
+namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 {
     [Serializable]
     public sealed class PlayerData
