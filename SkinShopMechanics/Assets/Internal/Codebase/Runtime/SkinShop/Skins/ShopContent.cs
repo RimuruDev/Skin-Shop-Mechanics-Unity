@@ -36,8 +36,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins
             ValidateDuplicates(mzeSkinItem, item => item.SkinType);
         }
 
-        private static void ValidateDuplicates<TCollection, TKey>(IEnumerable<TCollection> enumerable,
-            Func<TCollection, TKey> keySelector)
+        private static void ValidateDuplicates<TCollection, TKey>(IEnumerable<TCollection> enumerable, Func<TCollection, TKey> keySelector)
             where TCollection : ShopItem
         {
             var duplicates = enumerable.GroupBy(keySelector)

@@ -22,6 +22,6 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs
         public Sprite Image { get; private set; }
 
         [field: SerializeField, Range(0, 10000)]
-        public float Price { get; private set; }
+        public int Price { get; private set; }
     }
 }
