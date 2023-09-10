@@ -1,3 +1,4 @@
+# Unity
 /[Ll]ibrary/
 /Library/
 /[Tt]emp/
@@ -11,10 +12,7 @@
 /[Kk]eys/
 /[Tt]rash/
 
-#Unity+
-*/[Uu]ser[Ss]ettings/
-
-#Unity+VS
+# Unity
 */Library/
 */[Ll]ibrary/
 */[Tt]emp/
@@ -22,11 +20,14 @@
 */[Bb]uild/
 */[Bb]uilds/
 */[Ll]ogs/
+*/[Uu]ser[Ss]ettings/
 */[Aa]ssets/[Ll]ogs/*
 */[Aa]ssets/[Ll]og/*
 */[Mm]emoryCaptures/
 */[Tt]rash/
 */Logs/
+
+# VS
 */.vs/
 *ExportedObj/
 .consulo/
@@ -841,6 +842,3 @@ $RECYCLE.BIN/
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 
 # End of https://www.gitignore.io/api/git,unity,macos,csharp,windows,visualstudio,visualstudiocode
-@RimuruDev
-NoobSaveYourselfFromSpider/Assets/YandexGame/WorkingData/saveyg.yg
-*.yg
