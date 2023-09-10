@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5c5bd4682a14fe0b2fe05d2bf121bd9, type: 3}
-  m_Name: Bat
+  m_Name: Bear
   m_EditorClassIdentifier: 
-  <Model>k__BackingField: {fileID: 5475500558860850151, guid: 6a41d920b1ec93a4aa21f91da0a9acbc, type: 3}
-  <Image>k__BackingField: {fileID: 21300000, guid: 86fa84cdfe78c9d49bd03b9c0c167a8e, type: 3}
-  <Price>k__BackingField: 3000
-  <SkinType>k__BackingField: 1
+  <Model>k__BackingField: {fileID: 5475500558860850151, guid: 95c70a880bda30349b8e68db4865c63c, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: 761b955158dd15e4a8f15ad596be0776, type: 3}
+  <Price>k__BackingField: 4000
+  <SkinType>k__BackingField: 2
