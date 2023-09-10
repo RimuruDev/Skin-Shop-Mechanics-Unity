@@ -9,6 +9,7 @@
 //
 // **************************************************************** //
 
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs
@@ -17,6 +18,8 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs
     public sealed class ShopItem : ScriptableObject
     {
         [field: SerializeField] public GameObject Model { get; private set; }
-        [field: SerializeField] public Sprite Image { get; private set; }
+
+        [field: SerializeField, ShowAssetPreview]
+        public Sprite Image { get; private set; }
     }
 }
