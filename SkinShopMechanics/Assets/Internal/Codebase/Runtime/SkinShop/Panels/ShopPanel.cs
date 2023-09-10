@@ -11,9 +11,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
+using RimuruDev.Internal.Codebase.Runtime.Factorys;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
-using Unity.VisualScripting;
+using RimuruDev.Internal.Codebase.Utilities.Extensions;
 using UnityEngine;
 
 namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
@@ -24,9 +26,42 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
         private readonly IList<ShopItemView> shopItems = new List<ShopItemView>();
 
         [SerializeField] private Transform itemsParent;
+        [SerializeField, Expandable] private ShopItemViewFactory factory;
 
         public void Show(IEnumerable<ShopItem> items)
         {
+            items.CheckNull(factory, itemsParent);
+
+            ClearAll();
+
+            foreach (var item in items)
+            {
+                var spawnedItem = factory.Create(item, itemsParent);
+
+                spawnedItem.CheckNull();
+
+                spawnedItem.OnClick += OnItemViewClick;
+
+                spawnedItem.UnSelect();
+                spawnedItem.UnHighlight();
+
+                shopItems.Add(spawnedItem);
+            }
+        }
+
+        private void OnItemViewClick(ShopItemView view)
+        {
+        }
+
+        private void ClearAll()
+        {
+            foreach (var item in shopItems.Where(item => item != null).ToList())
+            {
+                item.OnClick -= OnItemViewClick;
+                Destroy(item.gameObject);
+            }
+
+            shopItems.Clear();
         }
     }
 }

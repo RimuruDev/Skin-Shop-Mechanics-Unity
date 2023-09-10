@@ -13,17 +13,28 @@
 using System;
 using System.Linq;
 
-public static class Validate
+namespace RimuruDev.Internal.Codebase.Utilities.Extensions
 {
-    public static void Null(params object[] objs)
+    public static class Validate
     {
-        if (objs.Any(obj => obj == null))
-            throw new NullReferenceException(nameof(objs));
-    }
+        public static void Null(params object[] objs)
+        {
+            if (objs.Any(obj => obj == null))
+                throw new NullReferenceException(nameof(objs));
+        }
 
-    public static void CheckNull(this object obj)
-    {
-        if (obj == null)
-            throw new NullReferenceException(nameof(obj));
+        public static void CheckNull(this object obj)
+        {
+            if (obj == null)
+                throw new NullReferenceException(nameof(obj));
+        }
+
+        public static void CheckNull(this object obj, params object[] objs)
+        {
+            if (obj == null)
+                throw new NullReferenceException(nameof(obj));
+
+            Null(objs);
+        }
     }
 }

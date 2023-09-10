@@ -14,6 +14,7 @@ using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
+using RimuruDev.Internal.Codebase.Utilities.Extensions;
 using UnityEngine;
 
 namespace RimuruDev.Internal.Codebase.Runtime.Factorys
