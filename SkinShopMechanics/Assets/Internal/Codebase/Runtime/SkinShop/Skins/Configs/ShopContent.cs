@@ -22,8 +22,8 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs
     [CreateAssetMenu(fileName = nameof(ShopContent), menuName = "StaticData/Shop/ShopContent", order = 3)]
     public class ShopContent : ScriptableObject
     {
-        [field: SerializeField, Expandable] public List<CharacterSkinItem> characterSkinItem;
-        [field: SerializeField, Expandable] public List<MazeSkinItem> mzeSkinItem;
+        [field: SerializeField, Expandable] private List<CharacterSkinItem> characterSkinItem;
+        [field: SerializeField, Expandable] private List<MazeSkinItem> mzeSkinItem;
 
         public IEnumerable<CharacterSkinItem> CharacterSkinItem => characterSkinItem;
         public IEnumerable<MazeSkinItem> MazeSkinItem => mzeSkinItem;

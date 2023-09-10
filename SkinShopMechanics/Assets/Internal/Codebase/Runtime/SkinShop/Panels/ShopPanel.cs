@@ -38,8 +38,6 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
             {
                 var spawnedItem = factory.Create(item, itemsParent);
 
-                spawnedItem.CheckNull();
-
                 spawnedItem.OnClick += OnItemViewClick;
 
                 spawnedItem.UnSelect();
