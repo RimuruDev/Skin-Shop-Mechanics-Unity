@@ -102,7 +102,35 @@ namespace RimuruDev.Internal.Codebase.Runtime.Data
 
         public IEnumerable<MazeSkins> OpenMazeSkins =>
             openMazeSkins;
-        
-        
+
+        public void OpenCharacterSkin(CharacterSkins skins)
+        {
+            try
+            {
+                if (openCharacterSkins.Contains(skins))
+                    throw new ArgumentException(nameof(skins));
+
+                openCharacterSkins.Add(skins);
+            }
+            catch (ArgumentException ex)
+            {
+                Debug.LogError("The skin has already been purchased, but you are trying to buy it again.");
+            }
+        }
+
+        public void OpenMazeSkin(MazeSkins maze)
+        {
+            try
+            {
+                if (openMazeSkins.Contains(maze))
+                    throw new ArgumentException(nameof(maze));
+
+                openMazeSkins.Add(maze);
+            }
+            catch (ArgumentException ex)
+            {
+                Debug.LogError("The maze has already been purchased, but you are trying to buy it again.");
+            }
+        }
     }
 }
