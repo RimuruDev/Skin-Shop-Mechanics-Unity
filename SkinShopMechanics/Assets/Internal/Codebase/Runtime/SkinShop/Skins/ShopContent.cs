@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
 using UnityEngine;
 
@@ -30,17 +31,19 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins
         [System.Diagnostics.Conditional("DEBUG")]
         private void OnValidate()
         {
-            var characterSkinsDuplicates = characterSkinItem.GroupBy(item => item.SkinType)
-                .Where(array => array.Count() > 1);
+            ValidateDuplicates(characterSkinItem, item => item.SkinType);
+            ValidateDuplicates(mzeSkinItem, item => item.SkinType);
+        }
 
-            if (characterSkinsDuplicates.Any()) // characterSkinsDuplicates.Count() > 0
-                throw new InvalidOperationException(nameof(characterSkinItem));
+        private static void ValidateDuplicates<TCollection, TKey>(IEnumerable<TCollection> enumerable,
+            Func<TCollection, TKey> keySelector)
+            where TCollection : ShopItem
+        {
+            var duplicates = enumerable.GroupBy(keySelector)
+                .Where(group => group.Count() > 1);
 
-            var mazeSkinDuplicates = mzeSkinItem.GroupBy(item => item.SkinType)
-                .Where(array => array.Count() > 1);
-
-            if (mazeSkinDuplicates.Any()) // mazeSkinDuplicates.Count() > 0
-                throw new InvalidOperationException(nameof(mzeSkinItem));
+            if (duplicates.Any())
+                throw new InvalidOperationException(nameof(enumerable));
         }
     }
 }
