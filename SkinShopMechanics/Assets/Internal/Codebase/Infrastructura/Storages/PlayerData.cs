@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
 using UnityEngine;
@@ -37,6 +38,21 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 
             openCharacterSkins = new List<CharacterSkins> { selectCharacterSkins };
             openMazeSkins = new List<MazeSkins> { selectMazeSkins };
+        }
+
+        [JsonConstructor]
+        public PlayerData(
+            int currency,
+            CharacterSkins selectCharacterSkins,
+            MazeSkins selectMazeSkins,
+            List<CharacterSkins> openCharacterSkins,
+            List<MazeSkins> openMazeSkins)
+        {
+            Currency = currency;
+            this.selectCharacterSkins = selectCharacterSkins;
+            this.selectMazeSkins = selectMazeSkins;
+            this.openCharacterSkins = openCharacterSkins;
+            this.openMazeSkins = openMazeSkins;
         }
 
         public int Currency
