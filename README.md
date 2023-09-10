@@ -2,7 +2,6 @@
 
 # [Telegram](https://t.me/DevLogUnity)
 
-
 <p align="center">
   <a>
     <img alt="Made With Unity" src="https://img.shields.io/badge/made%20with-Unity-57b9d3.svg?logo=Unity">
@@ -29,3 +28,5 @@
     <img alt="GitHub user stars" src="https://img.shields.io/github/stars/RimuruDev?affiliations=OWNER&branch=main&label=User%20Stars&logo=GitHub&logoColor=ffffff&labelColor=282828&color=informational&style=flat">
   </a>
 </p>
+
+![image](https://github.com/RimuruDev/Skin-Shop-Mechanics-Unity/assets/85500556/87b537ba-0d3f-4a6e-b316-9582f5a54bfe)
