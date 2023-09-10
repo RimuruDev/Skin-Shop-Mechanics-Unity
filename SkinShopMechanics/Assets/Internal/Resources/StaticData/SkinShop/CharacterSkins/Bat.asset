@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5c5bd4682a14fe0b2fe05d2bf121bd9, type: 3}
-  m_Name: CharacterSkinItem
+  m_Name: Bat
   m_EditorClassIdentifier: 
   <Model>k__BackingField: {fileID: 5475500558860850151, guid: 8ac8d3c9569f85046b3c180b21f15656, type: 3}
-  <Image>k__BackingField: {fileID: 21300000, guid: a1a0aa5c4d0274a4c9712d935c780d9a, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: 86fa84cdfe78c9d49bd03b9c0c167a8e, type: 3}
   <Price>k__BackingField: 2000
-  <SkinType>k__BackingField: 0
+  <SkinType>k__BackingField: 1

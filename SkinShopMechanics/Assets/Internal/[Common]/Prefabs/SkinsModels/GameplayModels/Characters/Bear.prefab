@@ -193,9 +193,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09c211278412b034486bdb93bad64a42, type: 2}
+  - {fileID: 2100000, guid: 0be3364dba1333c4bbcc48550f1a4b53, type: 2}
   - {fileID: 2100000, guid: 139a3ca31e8daf54caed4415badff588, type: 2}
-  - {fileID: 2100000, guid: 6e602686b2595514f905c37f38ebf4bb, type: 2}
+  - {fileID: 2100000, guid: 946e9ff022a36224c9743e3b8abbaee7, type: 2}
   - {fileID: 2100000, guid: 139a3ca31e8daf54caed4415badff588, type: 2}
   - {fileID: 2100000, guid: 130922aa4af34474882d03cc44883254, type: 2}
   m_StaticBatchInfo:
@@ -303,9 +303,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e7597c52d4bfa584f8228740ea810a9b, type: 2}
-  - {fileID: 2100000, guid: f82e23df981a8984cb53e37546f46cf1, type: 2}
-  - {fileID: 2100000, guid: 130922aa4af34474882d03cc44883254, type: 2}
+  - {fileID: 2100000, guid: a1a2164c6aa2a3a4ebd9ba35f20cf097, type: 2}
+  - {fileID: 2100000, guid: f438c229cd8a8314b9e0b6eba011935e, type: 2}
+  - {fileID: 2100000, guid: 3e7cfa1e2972f7747aca95303426465a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,7 +391,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5475500558860850145}
   m_Layer: 0
-  m_Name: Anubis
+  m_Name: Bear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,7 +475,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09c211278412b034486bdb93bad64a42, type: 2}
+  - {fileID: 2100000, guid: d2f937ebe665c084f866edbb1473d4ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -698,7 +698,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e7597c52d4bfa584f8228740ea810a9b, type: 2}
+  - {fileID: 2100000, guid: d2f937ebe665c084f866edbb1473d4ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
