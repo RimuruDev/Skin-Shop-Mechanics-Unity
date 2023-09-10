@@ -12,5 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2636ed171fe14f8685cf9be58e007236, type: 3}
   m_Name: ShopContent
   m_EditorClassIdentifier: 
-  characterSkinItem: []
-  mzeSkinItem: []
+  characterSkinItem:
+  - {fileID: 11400000, guid: 276b75e79f534664da56d596eeaf9c26, type: 2}
+  - {fileID: 11400000, guid: c88cb59656991e44eb158b3cbce6d22e, type: 2}
+  - {fileID: 11400000, guid: c0890b0ffca6e004abe966b71d8c2343, type: 2}
+  - {fileID: 11400000, guid: d3d5ce75a8b55364cb14b74878fc3f83, type: 2}
+  - {fileID: 11400000, guid: 48774c48dac622946ad5edebec7591ce, type: 2}
+  mzeSkinItem:
+  - {fileID: 11400000, guid: bbadcc8a396ef274caadf18c5909f359, type: 2}
+  - {fileID: 11400000, guid: 83d97df13db59c14cad56525ceb57fca, type: 2}
+  - {fileID: 11400000, guid: 957b141cdbb4fad449077785994ea4c6, type: 2}
+  - {fileID: 11400000, guid: a2dcd550800da904eb40f7f6e1561ab3, type: 2}
+  - {fileID: 11400000, guid: 49a61adabccf9a54e8db84331ab2f602, type: 2}

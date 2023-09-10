@@ -12,6 +12,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
@@ -22,8 +23,8 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins
     [CreateAssetMenu(fileName = nameof(ShopContent), menuName = "StaticData/Shop/ShopContent", order = 3)]
     public class ShopContent : ScriptableObject
     {
-        [field: SerializeField] public List<CharacterSkinItem> characterSkinItem;
-        [field: SerializeField] public List<MazeSkinItem> mzeSkinItem;
+        [field: SerializeField, Expandable] public List<CharacterSkinItem> characterSkinItem;
+        [field: SerializeField, Expandable] public List<MazeSkinItem> mzeSkinItem;
 
         public IEnumerable<CharacterSkinItem> CharacterSkinItem => characterSkinItem;
         public IEnumerable<MazeSkinItem> MazeSkinItem => mzeSkinItem;
