@@ -14,11 +14,10 @@ using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
 using UnityEngine;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs
 {
     [CreateAssetMenu(fileName = nameof(ShopContent), menuName = "StaticData/Shop/ShopContent", order = 3)]
     public class ShopContent : ScriptableObject

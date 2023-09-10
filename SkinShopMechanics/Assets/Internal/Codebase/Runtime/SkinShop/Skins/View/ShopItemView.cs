@@ -10,16 +10,14 @@
 // **************************************************************** //
 
 using System;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.UI;
 using NaughtyAttributes;
-using UnityEngine.EventSystems;
 using RimuruDev.Internal.Codebase.Runtime.Common.Values.Implementations;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
-using Object = UnityEngine.Object;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View
 {
     [SelectionBase]
     [DisallowMultipleComponent]
