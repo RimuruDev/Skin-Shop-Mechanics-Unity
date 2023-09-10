@@ -32,7 +32,7 @@ namespace RimuruDev.Internal.Codebase.Utilities.Editor.ScriptFinders
         private string[] scriptsInFolder;
         private string rootFolder = "/Internal";
 
-        [MenuItem("Rimuru Dev Tools/Script Finder")]
+        [MenuItem("RimuruDev Tools/Script Finder")]
         public static void ShowWindow()
         {
             var window = GetWindow<ScriptFinder>(Title);

@@ -22,7 +22,7 @@ namespace RimuruDev.Internal.Codebase.Utilities.Editor.SceneSwitcher
         private const string ToggleLabel = "Show Absolutely All Scenes";
         private bool showAllScenes;
 
-        [MenuItem("RimuruDevTools/Scene Switcher")]
+        [MenuItem("RimuruDev Tools/Scene Switcher")]
         private static void ShowWindow() =>
             GetWindow(typeof(SceneSwitcher));
 
