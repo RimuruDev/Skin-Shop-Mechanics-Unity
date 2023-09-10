@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185530c9146c42858b07289266cec24f, type: 3}
+  m_Name: ShopItemViewFactory
+  m_EditorClassIdentifier: 
+  characterSkinItemPrefab: {fileID: 3047309698005336979, guid: ca757e07e65e3d244903814f48e1d340, type: 3}
+  mazeSkinItemPrefab: {fileID: 7969553680543855009, guid: 21b9a14b4769458429ea16c87fcb138b, type: 3}
