@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4841270404755309962}
   - component: {fileID: 2913787543894677652}
   - component: {fileID: 7994793826311540705}
+  - component: {fileID: 2954426064133916551}
   m_Layer: 5
   m_Name: CharacterCategoryButton
   m_TagString: Untagged
@@ -255,3 +256,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2954426064133916551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561861015706927327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa44717ab28454cb254e441861843c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 7994793826311540705}
+  image: {fileID: 2913787543894677652}
+  selectColor: {r: 1, g: 1, b: 1, a: 1}
+  unselectColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
