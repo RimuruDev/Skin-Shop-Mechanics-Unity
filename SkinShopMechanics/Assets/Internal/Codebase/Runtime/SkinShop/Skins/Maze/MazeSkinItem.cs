@@ -14,7 +14,7 @@ using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 
 namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze
 {
-    [CreateAssetMenu(fileName = nameof(MazeSkinItem), menuName = "StaticData/Shop/" + nameof(MazeSkinItem), order = 0)]
+    [CreateAssetMenu(fileName = nameof(MazeSkinItem), menuName = "StaticData/Shop/" + nameof(MazeSkinItem), order = 1)]
     public class MazeSkinItem : ShopItem
     {
         [field: SerializeField] public MazeSkins SkinType { get; private set; }
