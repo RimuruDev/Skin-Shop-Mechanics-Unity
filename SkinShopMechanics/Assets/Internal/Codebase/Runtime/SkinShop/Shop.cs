@@ -9,6 +9,8 @@
 //
 // **************************************************************** //
 
+using System;
+using System.Linq;
 using UnityEngine;
 using NaughtyAttributes;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels;
@@ -25,5 +27,31 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop
         [SerializeField] private ShopCategoryButton mazeSkinButtons;
 
         [SerializeField] private ShopPanel shopPanel;
+
+        private void OnEnable()
+        {
+            characterSkinButtons.OnClick += OnCharacterSkinsButtonClick;
+            mazeSkinButtons.OnClick += OnMazeSkinsButtonClick;
+        }
+
+        private void OnDisable()
+        {
+            characterSkinButtons.OnClick -= OnCharacterSkinsButtonClick;
+            mazeSkinButtons.OnClick -= OnMazeSkinsButtonClick;
+        }
+
+        private void OnCharacterSkinsButtonClick()
+        {
+            mazeSkinButtons.Unselect();
+            characterSkinButtons.Select();
+            shopPanel.Show(contentItems.CharacterSkinItem);
+        }
+
+        private void OnMazeSkinsButtonClick()
+        {
+            mazeSkinButtons.Select();
+            characterSkinButtons.Unselect();
+            shopPanel.Show(contentItems.MazeSkinItem);
+        }
     }
 }
