@@ -13,7 +13,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
 {
     [DisallowMultipleComponent]
     public sealed class ShopCategoryButton : MonoBehaviour

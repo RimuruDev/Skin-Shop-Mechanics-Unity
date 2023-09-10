@@ -9,14 +9,12 @@
 //
 // **************************************************************** //
 
-using System;
-using System.Linq;
-using UnityEngine;
 using NaughtyAttributes;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
+using UnityEngine;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
 {
     [DisallowMultipleComponent]
     public sealed class Shop : MonoBehaviour
