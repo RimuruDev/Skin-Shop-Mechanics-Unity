@@ -10,18 +10,13 @@
 // **************************************************************** //
 
 using UnityEngine;
-using NaughtyAttributes;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character
 {
-    public abstract class ShopItem : ScriptableObject
+    [CreateAssetMenu(fileName = nameof(CharacterSkinItem), menuName = "StaticData/Shop/" + nameof(CharacterSkinItem), order = 0)]
+    public sealed class CharacterSkinItem : ShopItem
     {
-        [field: SerializeField] public GameObject Model { get; private set; }
-
-        [field: SerializeField, ShowAssetPreview]
-        public Sprite Image { get; private set; }
-
-        [field: SerializeField, Range(0, 10000)]
-        public float Price { get; private set; }
+        [field: SerializeField] public CharacterSkins SkinType { get; private set; }
     }
 }

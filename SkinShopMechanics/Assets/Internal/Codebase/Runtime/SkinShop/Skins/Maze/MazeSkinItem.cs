@@ -10,18 +10,13 @@
 // **************************************************************** //
 
 using UnityEngine;
-using NaughtyAttributes;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze
 {
-    public abstract class ShopItem : ScriptableObject
+    [CreateAssetMenu(fileName = nameof(MazeSkinItem), menuName = "StaticData/Shop/" + nameof(MazeSkinItem), order = 0)]
+    public class MazeSkinItem : ShopItem
     {
-        [field: SerializeField] public GameObject Model { get; private set; }
-
-        [field: SerializeField, ShowAssetPreview]
-        public Sprite Image { get; private set; }
-
-        [field: SerializeField, Range(0, 10000)]
-        public float Price { get; private set; }
+        [field: SerializeField] public MazeSkins SkinType { get; private set; }
     }
 }
