@@ -43,6 +43,9 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
                 spawnedItem.UnSelect();
                 spawnedItem.UnHighlight();
 
+                // Check open/close skin
+                
+                
                 shopItems.Add(spawnedItem);
             }
         }

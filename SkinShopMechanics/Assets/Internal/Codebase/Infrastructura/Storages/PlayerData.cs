@@ -66,7 +66,7 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 
                     currency = value;
                 }
-                catch (ArgumentOutOfRangeException ex)
+                catch (ArgumentOutOfRangeException)
                 {
                     currency = Mathf.Clamp(value, 0, int.MaxValue);
                     Debug.LogError($"ArgumentOutOfRangeException: Current currency: {currency} Value: {value}");
@@ -86,7 +86,7 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 
                     selectCharacterSkins = value;
                 }
-                catch (ArgumentException ex)
+                catch (ArgumentException)
                 {
                     Debug.LogError($"ArgumentException: Current character: {currency} Value: {value}");
                 }
@@ -105,7 +105,7 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 
                     selectMazeSkins = value;
                 }
-                catch (ArgumentException ex)
+                catch (ArgumentException)
                 {
                     Debug.LogError($"ArgumentException: Current maze: {currency} Value: {value} ");
                 }
@@ -127,7 +127,7 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 
                 openCharacterSkins.Add(skins);
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 Debug.LogError("The skin has already been purchased, but you are trying to buy it again.");
             }
@@ -142,7 +142,7 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 
                 openMazeSkins.Add(maze);
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 Debug.LogError("The maze has already been purchased, but you are trying to buy it again.");
             }
