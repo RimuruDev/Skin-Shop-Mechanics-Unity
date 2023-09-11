@@ -12,7 +12,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NaughtyAttributes;
-using RimuruDev.Internal.Codebase.Infrastructura.Factorys.ShopItemView;
+using RimuruDev.Internal.Codebase.Infrastructura.Factorys.ShopItems;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
 using RimuruDev.Internal.Codebase.Utilities.Extensions;
