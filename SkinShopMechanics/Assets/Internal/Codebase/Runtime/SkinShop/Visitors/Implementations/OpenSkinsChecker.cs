@@ -10,27 +10,31 @@
 // **************************************************************** //
 
 using System;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
+using System.Linq;
 using RimuruDev.Internal.Codebase.Infrastructura.Services.PersistenProgress;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitors.Interfaces;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitor
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitors.Implementations
 {
-    public sealed class SkinUncloker : IShopItemVisitor
+    public sealed class OpenSkinsChecker : IShopItemVisitor
     {
         private readonly IPersistenData persistenData;
 
-        public SkinUncloker(IPersistenData persistenData) =>
+        public bool IsOpened { get; private set; }
+
+        public OpenSkinsChecker(IPersistenData persistenData) =>
             this.persistenData = persistenData ?? throw new ArgumentNullException(nameof(persistenData));
 
         public void Visit(ShopItem shopItem) =>
             this.Visit((dynamic)shopItem);
 
         public void Visit(CharacterSkinItem characterSkinItem) =>
-            persistenData.PlayerData.OpenCharacterSkin(characterSkinItem.SkinType);
+            IsOpened = persistenData.PlayerData.OpenCharacterSkins.Contains(characterSkinItem.SkinType);
 
         public void Visit(MazeSkinItem mazeSkinItem) =>
-            persistenData.PlayerData.OpenMazeSkin(mazeSkinItem.SkinType);
+            IsOpened = persistenData.PlayerData.OpenMazeSkins.Contains(mazeSkinItem.SkinType);
     }
 }

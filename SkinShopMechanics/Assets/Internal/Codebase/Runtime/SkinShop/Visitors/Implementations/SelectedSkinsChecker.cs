@@ -14,23 +14,26 @@ using RimuruDev.Internal.Codebase.Infrastructura.Services.PersistenProgress;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitors.Interfaces;
 
-namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitor
+namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitors.Implementations
 {
-    public sealed class SkinSelector : IShopItemVisitor
+    public sealed class SelectedSkinsChecker : IShopItemVisitor
     {
         private readonly IPersistenData persistenData;
 
-        public SkinSelector(IPersistenData persistenData) =>
+        public bool IsSelected { get; private set; }
+
+        public SelectedSkinsChecker(IPersistenData persistenData) =>
             this.persistenData = persistenData ?? throw new ArgumentNullException(nameof(persistenData));
 
         public void Visit(ShopItem shopItem) =>
             this.Visit((dynamic)shopItem);
 
         public void Visit(CharacterSkinItem characterSkinItem) =>
-            persistenData.PlayerData.SelectCharacterSkins = characterSkinItem.SkinType;
+            IsSelected = persistenData.PlayerData.SelectCharacterSkins == characterSkinItem.SkinType;
 
         public void Visit(MazeSkinItem mazeSkinItem) =>
-            persistenData.PlayerData.SelectMazeSkins = mazeSkinItem.SkinType;
+            IsSelected = persistenData.PlayerData.SelectMazeSkins == mazeSkinItem.SkinType;
     }
 }
