@@ -54,7 +54,6 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
             this.openCharacterSkins = openCharacterSkins;
             this.openMazeSkins = openMazeSkins;
         }
-
         public int Currency
         {
             get => currency;
