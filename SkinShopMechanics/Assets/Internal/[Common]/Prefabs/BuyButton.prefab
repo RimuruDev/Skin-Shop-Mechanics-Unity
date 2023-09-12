@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 386239632667163704}
   - component: {fileID: 3378162287910421119}
   - component: {fileID: 4047135225781458762}
+  - component: {fileID: 4128245788964687204}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -367,3 +368,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4128245788964687204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6933703574211431736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263cc09e5d0144e89c29b7b30440457d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 4047135225781458762}
+  text: {fileID: 562424173765678089}
+  lockColor: {r: 1, g: 0.2216981, b: 0.2216981, a: 1}
+  unlockColor: {r: 1, g: 1, b: 1, a: 1}
+  lockAnimationDuration: 0.4
+  lockAnimationStrenght: 2

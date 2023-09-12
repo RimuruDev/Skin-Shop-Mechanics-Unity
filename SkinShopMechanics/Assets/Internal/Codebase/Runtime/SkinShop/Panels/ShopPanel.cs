@@ -86,7 +86,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
         {
             foreach (var item in shopItems)
                 item.UnSelect();
-            
+
             itemView.Select();
         }
 
@@ -107,7 +107,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
 
         private void ClearAll()
         {
-            foreach (var item in shopItems.Where(item => item != null).ToList())
+            foreach (var item in shopItems /*.Where(item => item != null).ToList()*/)
             {
                 item.OnClick -= OnItemViewClick;
                 Destroy(item.gameObject);

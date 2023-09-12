@@ -904,6 +904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 915170170}
   - component: {fileID: 915170171}
+  - component: {fileID: 915170172}
   m_Layer: 0
   m_Name: Shop
   m_TagString: Untagged
@@ -942,6 +943,19 @@ MonoBehaviour:
   flattenMode: 0
   flattenSpace: 0
   destroyAfterFlatten: 1
+--- !u!114 &915170172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915170169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3497e35106804d049df06d57bc24a5ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shop: {fileID: 1839252467}
 --- !u!1 &930607116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1295,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3073827379206659493, guid: 83c839967560c19489634ddeeed432a6, type: 3}
   m_PrefabInstance: {fileID: 1068520079}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1068520081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4128245788964687204, guid: 83c839967560c19489634ddeeed432a6, type: 3}
+  m_PrefabInstance: {fileID: 1068520079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 263cc09e5d0144e89c29b7b30440457d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1127571592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,9 +1844,9 @@ MonoBehaviour:
   contentItems: {fileID: 11400000, guid: 673b6a013e06d2e45aa511f2dec2792f, type: 2}
   characterSkinButtons: {fileID: 1802513276}
   mazeSkinButtons: {fileID: 1877907113}
-  buyButton: {fileID: 0}
-  selectedButton: {fileID: 0}
-  selectedText: {fileID: 0}
+  buyButton: {fileID: 1068520081}
+  selectedButton: {fileID: 409146619}
+  selectedText: {fileID: 2019416201}
   shopPanel: {fileID: 1344157911}
 --- !u!1001 &1877907108
 PrefabInstance:
