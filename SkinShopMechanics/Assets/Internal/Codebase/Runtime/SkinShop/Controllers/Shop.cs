@@ -12,7 +12,12 @@
 using NaughtyAttributes;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitors.Implementations;
+using RimuruDev.Internal.Codebase.Runtime.WalletLogic;
 using UnityEngine;
+using UnityEngine.Rendering.LookDev;
+using UnityEngine.UI;
 
 namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
 {
@@ -24,7 +29,20 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         [SerializeField] private ShopCategoryButton characterSkinButtons;
         [SerializeField] private ShopCategoryButton mazeSkinButtons;
 
+        [SerializeField] private BuyButton buyButton;
+        [SerializeField] private Button selectedButton;
+        [SerializeField] private Image selectedText;
+
         [SerializeField] private ShopPanel shopPanel;
+
+        private IDataProvider dataProvider;
+        private ShopItemView previewedItem;
+        private Wallet wallet;
+
+        private SkinSelector skinSelector;
+        private SkinUncloker skinUncloker;
+        private OpenSkinsChecker openSkinsChecker;
+        private SelectedSkinsChecker selectedSkinsChecker;
 
         private void OnEnable()
         {
@@ -51,5 +69,42 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             characterSkinButtons.Unselect();
             shopPanel.Show(contentItems.MazeSkinItem);
         }
+
+        private void ShowSelectionButton()
+        {
+            selectedButton.gameObject.SetActive(true);
+            HideBuyButton();
+            HideSelectedText();
+        }
+
+        private void ShowSelectedText()
+        {
+            selectedText.gameObject.SetActive(true);
+            HideSelectionButton();
+            HideBuyButton();
+        }
+
+        private void ShoweBuyButton(int price)
+        {
+            buyButton.gameObject.SetActive(true);
+            buyButton.UpdateText(price);
+
+            if (wallet.InEnought(price))
+                buyButton.Unlock();
+            else
+                buyButton.Lock();
+
+            HideSelectedText();
+            HideSelectionButton();
+        }
+
+        private void HideBuyButton() =>
+            buyButton.gameObject.SetActive(false);
+
+        private void HideSelectionButton() =>
+            selectedButton.gameObject.SetActive(false);
+
+        private void HideSelectedText() =>
+            selectedText.gameObject.SetActive(false);
     }
 }
