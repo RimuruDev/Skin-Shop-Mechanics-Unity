@@ -10,11 +10,11 @@
 // **************************************************************** //
 
 using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
 using UnityEngine;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Maze;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Character;
 
 namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
 {
@@ -54,6 +54,7 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Storages
             this.openCharacterSkins = openCharacterSkins;
             this.openMazeSkins = openMazeSkins;
         }
+
         public int Currency
         {
             get => currency;
