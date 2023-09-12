@@ -24,6 +24,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Boot
     public sealed class ShopBootstrupper : MonoBehaviour
     {
         [SerializeField] private Shop shop;
+        [SerializeField] private WalletView walletView;
 
         private IDataProvider dataProvider;
         private IPersistenData persistenData;
@@ -48,6 +49,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Boot
         private void InitializeWallet()
         {
             wallet = new Wallet(persistenData);
+            walletView.Initialize(wallet);
         }
 
         private void InitializeShop()
