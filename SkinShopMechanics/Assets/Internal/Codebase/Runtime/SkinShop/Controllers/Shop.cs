@@ -38,6 +38,10 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         [SerializeField] private ShopPanel shopPanel;
         [SerializeField] private SkinPlacement skinPlacement;
 
+        [SerializeField] private Camera modelCamera;
+        [SerializeField] private Transform characterCategoryCameraPosition;
+        [SerializeField] private Transform mazeCategoryCameraPosition;
+
         private IDataProvider dataProvider;
         private ShopItemView previewedItem;
         private Wallet wallet;
@@ -66,7 +70,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             shopPanel.Initialize(this.openSkinsChecker, this.selectedSkinsChecker);
 
             shopPanel.OnItemViewClicked += OnItemViewClicked;
-            
+
             OnCharacterSkinsButtonClick();
         }
 
@@ -93,7 +97,27 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         {
             mazeSkinButtons.Unselect();
             characterSkinButtons.Select();
+
+            UpdateCameraTransform(characterCategoryCameraPosition);
+
             shopPanel.Show(contentItems.CharacterSkinItem);
+        }
+
+        private void OnMazeSkinsButtonClick()
+        {
+            mazeSkinButtons.Select();
+            characterSkinButtons.Unselect();
+
+            UpdateCameraTransform(mazeCategoryCameraPosition);
+
+            shopPanel.Show(contentItems.MazeSkinItem);
+        }
+
+        private void SelectSkin()
+        {
+            skinSelector.Visit(previewedItem.Item);
+            shopPanel.Select(previewedItem);
+            ShowSelectedText();
         }
 
         private void OnBuyButtonClick()
@@ -119,12 +143,8 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             dataProvider.Save();
         }
 
-        private void SelectSkin()
-        {
-            skinSelector.Visit(previewedItem.Item);
-            shopPanel.Select(previewedItem);
-            ShowSelectedText();
-        }
+        private void UpdateCameraTransform(Transform transform) =>
+            modelCamera.transform.SetPositionAndRotation(transform.position, transform.rotation);
 
         private void OnItemViewClicked(ShopItemView itemView)
         {
@@ -147,13 +167,6 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             }
             else
                 ShoweBuyButton(previewedItem.Price);
-        }
-
-        private void OnMazeSkinsButtonClick()
-        {
-            mazeSkinButtons.Select();
-            characterSkinButtons.Unselect();
-            shopPanel.Show(contentItems.MazeSkinItem);
         }
 
         private void ShowSelectionButton()
