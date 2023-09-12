@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194e02f7a9b646c59cb3c0d1979d9f1b, type: 3}
   m_Name: JungleCell
   m_EditorClassIdentifier: 
-  <Model>k__BackingField: {fileID: 3390391722206223743, guid: f9bf755668acaf6469dd71019d9e251e, type: 3}
+  <Model>k__BackingField: {fileID: 3390391722206223743, guid: 7ccb00966f05cef43a732385f2ccd472, type: 3}
   <Image>k__BackingField: {fileID: 21300000, guid: 938edd438d59c7a42b552c043f1b4ddf, type: 3}
   <Price>k__BackingField: 7000
   <SkinType>k__BackingField: 3

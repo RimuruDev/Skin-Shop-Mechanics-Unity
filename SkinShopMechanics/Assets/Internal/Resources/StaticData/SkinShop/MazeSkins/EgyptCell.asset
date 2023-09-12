@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194e02f7a9b646c59cb3c0d1979d9f1b, type: 3}
   m_Name: EgyptCell
   m_EditorClassIdentifier: 
-  <Model>k__BackingField: {fileID: 3390391722206223743, guid: 1c53b8a419e75434fb74703477bc123e, type: 3}
+  <Model>k__BackingField: {fileID: 3390391722206223743, guid: 085a14c810296aa4c944739013e10ad9, type: 3}
   <Image>k__BackingField: {fileID: 21300000, guid: a4e42ad595d50734ea7b6be61065a522, type: 3}
   <Price>k__BackingField: 5000
   <SkinType>k__BackingField: 1

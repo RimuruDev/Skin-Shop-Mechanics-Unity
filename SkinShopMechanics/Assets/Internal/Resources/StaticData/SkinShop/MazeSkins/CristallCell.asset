@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194e02f7a9b646c59cb3c0d1979d9f1b, type: 3}
   m_Name: CristallCell
   m_EditorClassIdentifier: 
-  <Model>k__BackingField: {fileID: 3390391722206223743, guid: 04ac41fa6bc83c54296c8d3b5216d633, type: 3}
+  <Model>k__BackingField: {fileID: 3390391722206223743, guid: 7c2680fdda9442748b639669f3831b07, type: 3}
   <Image>k__BackingField: {fileID: 21300000, guid: b22b75ba63c10f3469ecf756e952026a, type: 3}
   <Price>k__BackingField: 3000
   <SkinType>k__BackingField: 2
