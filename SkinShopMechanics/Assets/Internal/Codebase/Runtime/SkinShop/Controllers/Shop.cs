@@ -9,7 +9,10 @@
 //
 // **************************************************************** //
 
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using NaughtyAttributes;
+using RimuruDev.Internal.Codebase.Infrastructura.Services.PersistenProgress;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
 using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
@@ -44,11 +47,35 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         private OpenSkinsChecker openSkinsChecker;
         private SelectedSkinsChecker selectedSkinsChecker;
 
+        [SuppressMessage("ReSharper", "ParameterHidesMember")]
+        public void Initialize(
+            Wallet wallet,
+            IDataProvider dataProvider,
+            OpenSkinsChecker openSkinsChecker,
+            SelectedSkinsChecker selectedSkinsChecker,
+            SkinSelector skinSelector,
+            SkinUncloker skinUncloker)
+        {
+            this.wallet = wallet;
+            this.dataProvider = dataProvider;
+            this.openSkinsChecker = openSkinsChecker;
+            this.selectedSkinsChecker = selectedSkinsChecker;
+            this.skinSelector = skinSelector;
+            this.skinUncloker = skinUncloker;
+
+            shopPanel.Initialize(this.openSkinsChecker, this.selectedSkinsChecker);
+
+            OnCharacterSkinsButtonClick();
+        }
+
         private void OnEnable()
         {
             characterSkinButtons.OnClick += OnCharacterSkinsButtonClick;
             mazeSkinButtons.OnClick += OnMazeSkinsButtonClick;
             shopPanel.OnItemViewClicked += OnItemViewClicked;
+
+            buyButton.OnClick += OnBuyButtonClick;
+            selectedButton.onClick.AddListener(OnSelectionButtonClick);
         }
 
         private void OnDisable()
@@ -56,6 +83,9 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             characterSkinButtons.OnClick -= OnCharacterSkinsButtonClick;
             mazeSkinButtons.OnClick -= OnMazeSkinsButtonClick;
             shopPanel.OnItemViewClicked -= OnItemViewClicked;
+
+            buyButton.OnClick -= OnBuyButtonClick;
+            selectedButton.onClick.RemoveListener(OnSelectionButtonClick);
         }
 
         private void OnCharacterSkinsButtonClick()
@@ -63,6 +93,36 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             mazeSkinButtons.Unselect();
             characterSkinButtons.Select();
             shopPanel.Show(contentItems.CharacterSkinItem);
+        }
+
+        private void OnBuyButtonClick()
+        {
+            if (wallet.IsEnought(previewedItem.Price))
+            {
+                wallet.Send(previewedItem.Price);
+
+                skinUncloker.Visit(previewedItem.Item);
+
+                SelectSkin();
+
+                previewedItem.Unlock();
+
+                dataProvider.Save();
+            }
+        }
+
+        private void OnSelectionButtonClick()
+        {
+            SelectSkin();
+
+            dataProvider.Save();
+        }
+
+        private void SelectSkin()
+        {
+            skinSelector.Visit(previewedItem.Item);
+            shopPanel.Select(previewedItem);
+            ShowSelectedText();
         }
 
         private void OnItemViewClicked(ShopItemView itemView)
@@ -113,7 +173,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             buyButton.gameObject.SetActive(true);
             buyButton.UpdateText(price);
 
-            if (wallet.InEnought(price))
+            if (wallet.IsEnought(price))
                 buyButton.Unlock();
             else
                 buyButton.Lock();
