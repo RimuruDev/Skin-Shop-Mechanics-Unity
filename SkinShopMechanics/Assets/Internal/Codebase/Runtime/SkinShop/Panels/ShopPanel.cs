@@ -82,6 +82,14 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
             }
         }
 
+        public void Select(ShopItemView itemView)
+        {
+            foreach (var item in shopItems)
+                item.UnSelect();
+            
+            itemView.Select();
+        }
+
         private void OnItemViewClick(ShopItemView view)
         {
             Highlight(view);
