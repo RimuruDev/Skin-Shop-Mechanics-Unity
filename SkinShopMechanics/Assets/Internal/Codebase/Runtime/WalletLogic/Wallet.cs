@@ -46,7 +46,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.WalletLogic
             }
         }
 
-        public bool InEnought(int currency)
+        public bool IsEnought(int currency)
         {
             try
             {
