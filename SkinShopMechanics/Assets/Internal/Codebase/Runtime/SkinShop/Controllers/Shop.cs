@@ -36,6 +36,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         [SerializeField] private Image selectedText;
 
         [SerializeField] private ShopPanel shopPanel;
+        [SerializeField] private SkinPlacement skinPlacement;
 
         private IDataProvider dataProvider;
         private ShopItemView previewedItem;
@@ -127,6 +128,7 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         private void OnItemViewClicked(ShopItemView itemView)
         {
             previewedItem = itemView;
+            skinPlacement.InstantiateModel(previewedItem.Model);
 
             openSkinsChecker.Visit(previewedItem.Item);
 
