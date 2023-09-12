@@ -20,7 +20,7 @@ namespace RimuruDev.Internal.Codebase.Infrastructura.Services.PersistenProgress
 
         public PlayerData PlayerData
         {
-            get => playerData; //??= new PlayerData();
+            get => playerData;
             set
             {
                 if (value == null)
