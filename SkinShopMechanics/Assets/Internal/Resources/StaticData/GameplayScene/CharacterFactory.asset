@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e148dcb466374a7381cb85b70d7e3c1f, type: 3}
+  m_Name: CharacterFactory
+  m_EditorClassIdentifier: 
+  anubis: {fileID: -4440982447966215281, guid: 8ac8d3c9569f85046b3c180b21f15656, type: 3}
+  bat: {fileID: -4604325113795858072, guid: 6a41d920b1ec93a4aa21f91da0a9acbc, type: 3}
+  bear: {fileID: -549256253965179390, guid: 95c70a880bda30349b8e68db4865c63c, type: 3}
+  bearArmor: {fileID: 7949118009161189251, guid: 1f300f19d0c1b9146b1e12e3b6632c8a, type: 3}
+  cat: {fileID: -2331650109607169127, guid: 54963b34ba373f04bbe03ec64d9153b3, type: 3}
+  deer: {fileID: 0}
+  dog: {fileID: 0}
+  dogBeach: {fileID: 0}
+  dragon: {fileID: 0}
+  hare: {fileID: 0}
+  monkey: {fileID: 0}
+  mouse: {fileID: 0}
+  panda: {fileID: 0}
+  parrot: {fileID: 0}
+  penguin: {fileID: 0}
+  pharaon: {fileID: 0}
+  ra: {fileID: 0}
+  redPanda: {fileID: 0}
+  duck: {fileID: 0}

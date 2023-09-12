@@ -390,6 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5475500558860850145}
+  - component: {fileID: 7949118009161189251}
   m_Layer: 0
   m_Name: BearArmor
   m_TagString: Untagged
@@ -413,6 +414,18 @@ Transform:
   - {fileID: 8353650314080574291}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7949118009161189251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5475500558860850151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330020bda6174b4fb23d7ce421335441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6901416897096152527
 GameObject:
   m_ObjectHideFlags: 0
