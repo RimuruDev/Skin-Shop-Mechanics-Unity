@@ -30,6 +30,6 @@ namespace RimuruDev.Internal.Codebase.Runtime.Common.Values.Base
         }
 
         public void Hide() =>
-            gameObject.SetActive(true);
+            gameObject.SetActive(false);
     }
 }
