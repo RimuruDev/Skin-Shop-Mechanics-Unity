@@ -80,6 +80,8 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
 
                 shopItems.Add(spawnedItem);
             }
+
+            Sort();
         }
 
         public void Select(ShopItemView itemView)
@@ -88,6 +90,22 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
                 item.UnSelect();
 
             itemView.Select();
+        }
+
+        private void Sort()
+        {
+            var shopItemsCopy = shopItems
+                .OrderBy(item => item.IsLoock)
+                .ThenByDescending(item => item.Price)
+                .ToList();
+
+            shopItems.Clear();
+
+            foreach (var item in shopItemsCopy)
+                shopItems.Add(item);
+
+            for (var i = 0; i < shopItemsCopy.Count; i++)
+                shopItems[i].transform.SetSiblingIndex(i);
         }
 
         private void OnItemViewClick(ShopItemView view)
