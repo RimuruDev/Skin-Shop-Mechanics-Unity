@@ -9,24 +9,41 @@
 //
 // **************************************************************** //
 
-using System.Collections.Generic;
+using System;
 using System.Linq;
-using NaughtyAttributes;
-using RimuruDev.Internal.Codebase.Infrastructura.Factorys.ShopItems;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
-using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
-using RimuruDev.Internal.Codebase.Utilities.Extensions;
 using UnityEngine;
+using NaughtyAttributes;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using RimuruDev.Internal.Codebase.Utilities.Extensions;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.View;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Skins.Configs;
+using RimuruDev.Internal.Codebase.Infrastructura.Factorys.ShopItems;
+using RimuruDev.Internal.Codebase.Runtime.SkinShop.Visitors.Implementations;
 
 namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
 {
     [DisallowMultipleComponent]
-    public class ShopPanel : MonoBehaviour
+    public sealed class ShopPanel : MonoBehaviour
     {
+        public event Action<ShopItemView> OnItemViewClicked;
+
         private readonly IList<ShopItemView> shopItems = new List<ShopItemView>();
 
         [SerializeField] private Transform itemsParent;
         [SerializeField, Expandable] private ShopItemViewFactory factory;
+
+        private OpenSkinsChecker openSkinsChecker;
+        private SelectedSkinsChecker selectedSkinsChecker;
+
+        [SuppressMessage("ReSharper", "ParameterHidesMember")]
+        public void Initialize(OpenSkinsChecker openSkinsChecker, SelectedSkinsChecker selectedSkinsChecker)
+        {
+            Validate.Null(openSkinsChecker, selectedSkinsChecker);
+
+            this.openSkinsChecker = openSkinsChecker;
+            this.selectedSkinsChecker = selectedSkinsChecker;
+        }
 
         public void Show(IEnumerable<ShopItem> items)
         {
@@ -43,15 +60,41 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Panels
                 spawnedItem.UnSelect();
                 spawnedItem.UnHighlight();
 
-                // Check open/close skin
-                
-                
+                openSkinsChecker.Visit(spawnedItem.Item);
+
+                if (openSkinsChecker.IsOpened)
+                {
+                    selectedSkinsChecker.Visit(spawnedItem.Item);
+
+                    if (selectedSkinsChecker.IsSelected)
+                    {
+                        spawnedItem.Select();
+                        spawnedItem.Highlight();
+                        OnItemViewClicked?.Invoke(spawnedItem);
+                    }
+
+                    spawnedItem.Unlock();
+                }
+                else
+                    spawnedItem.Lock();
+
                 shopItems.Add(spawnedItem);
             }
         }
 
         private void OnItemViewClick(ShopItemView view)
         {
+            Highlight(view);
+
+            OnItemViewClicked?.Invoke(view);
+        }
+
+        private void Highlight(ShopItemView shopItemView)
+        {
+            foreach (var item in shopItems)
+                item.UnHighlight();
+
+            shopItemView.Highlight();
         }
 
         private void ClearAll()
