@@ -48,12 +48,14 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         {
             characterSkinButtons.OnClick += OnCharacterSkinsButtonClick;
             mazeSkinButtons.OnClick += OnMazeSkinsButtonClick;
+            shopPanel.OnItemViewClicked += OnItemViewClicked;
         }
 
         private void OnDisable()
         {
             characterSkinButtons.OnClick -= OnCharacterSkinsButtonClick;
             mazeSkinButtons.OnClick -= OnMazeSkinsButtonClick;
+            shopPanel.OnItemViewClicked -= OnItemViewClicked;
         }
 
         private void OnCharacterSkinsButtonClick()
@@ -61,6 +63,28 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
             mazeSkinButtons.Unselect();
             characterSkinButtons.Select();
             shopPanel.Show(contentItems.CharacterSkinItem);
+        }
+
+        private void OnItemViewClicked(ShopItemView itemView)
+        {
+            previewedItem = itemView;
+
+            openSkinsChecker.Visit(previewedItem.Item);
+
+            if (openSkinsChecker.IsOpened)
+            {
+                selectedSkinsChecker.Visit(previewedItem.Item);
+
+                if (selectedSkinsChecker.IsSelected)
+                {
+                    ShowSelectedText();
+                    return;
+                }
+
+                ShowSelectionButton();
+            }
+            else
+                ShoweBuyButton(previewedItem.Price);
         }
 
         private void OnMazeSkinsButtonClick()
