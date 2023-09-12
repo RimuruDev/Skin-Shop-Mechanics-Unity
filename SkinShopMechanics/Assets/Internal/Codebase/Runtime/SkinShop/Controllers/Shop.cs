@@ -65,6 +65,8 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
 
             shopPanel.Initialize(this.openSkinsChecker, this.selectedSkinsChecker);
 
+            shopPanel.OnItemViewClicked += OnItemViewClicked;
+            
             OnCharacterSkinsButtonClick();
         }
 
@@ -72,7 +74,6 @@ namespace RimuruDev.Internal.Codebase.Runtime.SkinShop.Controllers
         {
             characterSkinButtons.OnClick += OnCharacterSkinsButtonClick;
             mazeSkinButtons.OnClick += OnMazeSkinsButtonClick;
-            shopPanel.OnItemViewClicked += OnItemViewClicked;
 
             buyButton.OnClick += OnBuyButtonClick;
             selectedButton.onClick.AddListener(OnSelectionButtonClick);
